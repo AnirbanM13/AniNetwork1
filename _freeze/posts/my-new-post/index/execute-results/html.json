@@ -1,0 +1,14 @@
+{
+  "hash": "3ec2546793394237a6a48a4dc87d9012",
+  "result": {
+    "markdown": "---\ntitle: \"My First Post\"\nauthor: \"Harlow Malloc\"\ndate: \"2022-09-13\"\ncategories: [thoughts]\nimage: \"image.jpg\"\n---\n\n\nThis is test drive\n\n\n::: {.cell}\n\n```{.r .cell-code}\nprint(\"Ahoy World!\")\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] \"Ahoy World!\"\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
