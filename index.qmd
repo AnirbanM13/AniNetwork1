@@ -1,5 +1,5 @@
 ---
-title: "AniNetwork1"
+title: "AniNetwork"
 listing:
   contents: posts
   sort: "date desc"
