@@ -29,4 +29,4 @@ Presently, I am a *novice* research scholar at Indian Statistical Institute, Kol
 
 ## Interest
 
-Broad portion of my mind occupied with only statistics. I mainly working in complex data structure and statistical inference on network data (synonymous with complex data). Besides statistics, I have interest in stock markets and R coding.
+Broad portion of my mind occupied with only statistics. I mainly working with complex data structure and statistical inference on network data (synonymous with complex data). Besides statistics, I have interest in stock markets and R coding.
