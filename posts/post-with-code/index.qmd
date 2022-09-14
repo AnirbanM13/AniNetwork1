@@ -1,7 +1,7 @@
 ---
 title: "Post With Code"
-author: "Harlow Malloc"
-date: "2022-09-13"
+author: "Anirban Mandal"
+date: today
 categories: [news, code, analysis]
 image: "image.jpg"
 ---
