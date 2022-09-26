@@ -1,0 +1,17 @@
+---
+title: "Plumbe-R"
+subtitle: "Begginer guide to use pipes in R"
+author: "Anirban Mandal"
+date: "09/26/2022"
+categories: 
+ - R
+ - Coding
+---
+
+![Not calling a plumber, huh!](images/garfield-plumbing-cartoon.png){width="709"}
+
+# Introduction
+
+Humankind invent *pipes* to control the everyday flow (water, air, blah! blah! blah!) in the work space. As a result *Devs* are makes same thing for the programming languages to make work flow smooth. I am not a developer, I am a practitioner of statistics. At the beginning when I started to write codes in R, I personally not aware of this beautiful tool. I always fear about the so called *piping* the code.
+
+I started writing this blogs for my own help and list the new tricks in piping. I use several reference for this blog but I also use **stack overflow** as a major reference. I list down the most viewed issues related to piping for my future help. \

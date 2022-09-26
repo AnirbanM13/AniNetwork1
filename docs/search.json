@@ -1,24 +1,17 @@
 [
   {
-    "objectID": "posts/my-new-post/index.html",
-    "href": "posts/my-new-post/index.html",
-    "title": "My First Post",
+    "objectID": "posts/Plumbe-R/plumber_index.html",
+    "href": "posts/Plumbe-R/plumber_index.html",
+    "title": "Plumbe-R",
     "section": "",
-    "text": "print(\"Ahoy World!\")\n\n[1] \"Ahoy World!\""
-  },
-  {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Welcome To My Blog",
-    "section": "",
-    "text": "Since this post doesn’t specify an explicit image, the first image in the post will be used in the listing page of posts."
+    "text": "Introduction\nHumankind invent pipes to control the everyday flow (water, air, blah! blah! blah!) in the work space. As a result Devs are makes same thing for the programming languages to make work flow smooth. I am not a developer I am a practitioner of statistics. At the beginning when I started to write codes in R, I personally not aware of this beautiful tool. I always fear about the so called piping the code.\nI started writing this blogs for my own help and practicing the piping. I use several reference for this blog but I also use stack overflow as a major reference. I list down the most viewed issues in the stack overflow about the piping for my future help.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "AniNetwork",
+    "title": "AnnieNetwork",
     "section": "",
-    "text": "Anirban Mandal\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nthoughts\n\n\n\n\n\n\n\n\n\n\n\nSep 13, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\n  \n\n\n\n\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\n\n\nSep 10, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\nNo matching items"
+    "text": "Begginer guide to use pipes in R\n\n\n\n\nR\n\n\nCoding\n\n\n\n\n\n\n\n\n\n\n\nSep 26, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",

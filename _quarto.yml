@@ -11,6 +11,13 @@ website:
         href: https://github.com/
       - icon: twitter
         href: https://twitter.com
+        
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  
 format:
   html:
     theme: theme.scss
