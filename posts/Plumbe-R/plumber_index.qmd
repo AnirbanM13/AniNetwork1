@@ -1,17 +1,164 @@
 ---
-title: "Plumbe-R"
-subtitle: "Begginer guide to use pipes in R"
+title: "Calling Plumbe-R, Huh!"
+subtitle: "How to use Pipes in R?"
 author: "Anirban Mandal"
 date: "09/26/2022"
+number-sections: false
+table-of-contents: true
+format: 
+   html: 
+     df-print: kable
 categories: 
  - R
- - Coding
+ - Code
 ---
 
-![Not calling a plumber, huh!](images/garfield-plumbing-cartoon.png){width="709"}
+\--
 
 # Introduction
 
-Humankind invent *pipes* to control the everyday flow (water, air, blah! blah! blah!) in the work space. As a result *Devs* are makes same thing for the programming languages to make work flow smooth. I am not a developer, I am a practitioner of statistics. At the beginning when I started to write codes in R, I personally not aware of this beautiful tool. I always fear about the so called *piping* the code.
+Humankind invent *pipes* to control the everyday flow (water, air, blah! blah! blah!) in the work space. As a result *Devs* are make same thing for the programming languages to make work flow smooth. I am not a developer, I am a practitioner of statistics. At the beginning when I started to write codes in R, I personally not aware of this beautiful tool. I always fear about the so called *piping* the code.
 
-I started writing this blogs for my own help and list the new tricks in piping. I use several reference for this blog but I also use **stack overflow** as a major reference. I list down the most viewed issues related to piping for my future help. \
+I started writing this blog for my own help and list down the new tricks in piping. I use several reference for this blog but I also use **stack overflow** as a major reference. I also list down the most viewed issues related to piping for my future help.
+
+![Not calling a plumber may invite disaster!](images/garfield-plumbing-cartoon.jpg)
+
+## What is pipes?
+
+Pipes in R were first introduce by *Stefan Milton Bache* in the package called *magrittr* (do you know René Magritte?). He develop this package keeping two things in mind:
+
+1.  decrease development time.
+
+2.  improve readability and maintainability of code.
+
+[![The Treachery of Images (French: La Trahison des Images) by René Magritte](images/MagrittePipe-01.jpeg){fig-align="left"}](https://en.wikipedia.org/wiki/The_Treachery_of_Images)
+
+The *magritrr* offer 'pipe' -like operator, `%>%`. This operator is simply makes your function `f(x)` as `x %>% f` , `x` go to function `f` through the *pipe* rather than putting `x` directly into the `f`. This is look like I made my life more complicated but it is not in the perspective of data science. When we dealing with large data frame with enormous amount of attributes, there this pipes are really life saver.
+
+Recent times many package includes *magritrr* package because of huge demand. Major data science packages like *tidyverse* and *dplyr* has include pipe.
+
+::: {.callout-tip appearance="minimal"}
+## Tips:
+
+I am feeling lazy to type `%` , `>` and `%` individually. Keyboard shortcut: `CTRL + shift + M` .
+:::
+
+To know more about the history of `%>%` operator see this [History of the pipe operator in R](http://adolfoalvarez.cl/blog/2021-09-16-plumbers-chains-and-famous-painters-the-history-of-the-pipe-operator-in-r/).
+
+## Basics
+
+Lets have look at the following example:
+
+``` r
+library(tidyverse)
+mtcars %>% arrange(cyl) %>%  filter(mpg < 20)
+```
+
+`mtcars` gives the data through the pipe (sometimes called forward pipe) to the function `arrange` where we sort the data according to the column `cyl` then pass the modified data to the function `filter` and extract only the rows which have `mpg < 20`.
+
+::: {.callout-important appearance="minimal"}
+## Appearence matters:
+
+``` r
+#bad
+mtcars %>% arrange(cyl) %>%  filter(mpg < 20)
+
+#good
+mtcars %>% 
+ arrange(cyl) %>%  
+ filter(mpg < 20)
+```
+:::
+
+This is how a pipe used in basic data manipulation.
+
+# Types of pipe
+
+## Simple pipe or forward pipe, `%>%`
+
+This is the most common type of pipe known by everyone who use tidyverse frequently. This is simply take my value into function.
+
+``` r
+#normal guy
+print("Ahoy world!")
+
+#data scientist
+"Ahoy world!" %>% print()
+```
+
+## Tee pipe, `%T>%`
+
+Both `x %>% f` and `x %T>% f` run `f(x)` but the difference is that the first one returns the output of `f(x)` whereas the second one return `x`.
+
+``` r
+> x <- c(1,2,3,4)
+> x %T>% sum() 
+[1] 1 2 3 4
+```
+
+1.  `%T>%` is typically use with `plot()` or `print()` or other command that do not return anything.
+
+2.  Suppose we want to use `lm()` multiple times for different sets of observations. We can use `%T>%` here.
+
+    ``` r
+    library(magrittr)
+
+    BOD %T>%
+      { lm(demand ~ Time, data = ., subset = 1:4) %>% print } %T>%
+      { lm(demand ~ Time, data = ., subset = 2:5) %>% print } %>%
+      { lm(demand ~ Time, data = ., subset = 3:6) %>% print }  
+    ```
+
+for more information please see this post on stackoverflow --- [What does %T\>% function mean in R?](https://stackoverflow.com/questions/59551512/what-does-t-function-mean-in-r).
+
+## Exposition pipe, `%$%`
+
+This actually expose the names in 'left hand expression' to 'right hand expression', forward pipe operator does not allow that . See the example below
+
+``` r
+> iris %>% cor(Sepal.Length, Sepal.Width)
+Error in pmatch(use, c("all.obs", "complete.obs", "pairwise.complete.obs",  : 
+  object 'Sepal.Width' not found
+  
+> iris %$% cor(Sepal.Length, Sepal.Width)
+[1] -0.1175698
+```
+
+## Assignment pipe, `%<>%`
+
+This is just reassign the result of the pipe chain to the starting variable.
+
+``` r
+#example 1
+> x <- c(1,2,3,4)
+> x %<>% sum()
+> x
+[1] 10
+#example 2
+> x <- c(1,2,3,4)
+> x %<>% sqrt() %>% sum()
+> x
+[1] 6.146264
+```
+
+In the example 2, `x` passed through the `sqrt()` and value of `x` become square root of original variable then we pass that value in `sum()`.
+
+::: {.callout-caution appearance="minimal"}
+## Caution
+
+Although this pipe make life easier, but experts do not recommend the use of this pipe.
+
+``` R
+# Good
+x <- x %>% 
+  abs() %>% 
+  sort()
+  
+# Bad
+x %<>%
+  abs() %>% 
+  sort()  
+```
+:::
+
+To know more about the appearenc and uses of pipe properly you can see the post of *Hadley Wickham* --- [R style guide](https://style.tidyverse.org/pipes.html).

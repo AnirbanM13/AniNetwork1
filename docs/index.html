@@ -144,7 +144,7 @@ ul.task-list{list-style: none;}
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Coding">Coding <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Code">Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="R">R <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -156,31 +156,52 @@ ul.task-list{list-style: none;}
 
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-listing-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-listing'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-date-sort" data-direction="asc">
+          Date - Oldest
+        </option>
+         <option value="listing-date-sort" data-direction="desc">
+          Date - Newest
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+</div>
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="R,Coding" data-listing-date-sort="1664130600000" data-listing-file-modified-sort="1664209666849" data-listing-reading-time-sort="0.635">
+<div class="quarto-post image-right" data-index="0" data-categories="R,Code" data-listing-date-sort="1664130600000" data-listing-file-modified-sort="1664605376586" data-listing-reading-time-sort="3.95">
 <div class="thumbnail">
-<p><a href="./posts/Plumbe-R/plumber_index.html"> <img src="./posts/Plumbe-R/images/garfield-plumbing-cartoon.png" class="thumnail-image"> </a></p>
+<p><a href="./posts/Plumbe-R/plumber_index.html"> <img src="./posts/Plumbe-R/images/garfield-plumbing-cartoon.jpg" class="thumnail-image"> </a></p>
 </div>
 <div class="body">
 <a href="./posts/Plumbe-R/plumber_index.html">
 <h3 class="no-anchor listing-title">
-Plumbe-R
+Calling Plumbe-R, Huh!
 </h3>
 <div class="listing-subtitle">
-Begginer guide to use pipes in R
+How to use Pipes in R?
 </div>
 </a>
 <div class="listing-categories">
 <div class="listing-category" onclick="window.quartoListingCategory('R'); return false;">
 R
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('Coding'); return false;">
-Coding
+<div class="listing-category" onclick="window.quartoListingCategory('Code'); return false;">
+Code
 </div>
 </div>
 <a href="./posts/Plumbe-R/plumber_index.html">
 <div class="listing-description">
-<img src="images/garfield-plumbing-cartoon.png" class="img-fluid figure-img" alt="This" width="709">
+--
 </div>
 </a>
 </div>

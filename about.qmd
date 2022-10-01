@@ -9,9 +9,6 @@ about:
     - icon: twitter
       text: Twitter
       href: https://twitter.com/anirban___13
-    - icon: reddit
-      text: Reddit
-      href: https://reddit.com
     - icon: github
       text: Github
       href: https://github.com/AnirbanM13

@@ -2,16 +2,44 @@
   {
     "objectID": "posts/Plumbe-R/plumber_index.html",
     "href": "posts/Plumbe-R/plumber_index.html",
-    "title": "Plumbe-R",
+    "title": "Calling Plumbe-R, Huh!",
     "section": "",
-    "text": "Introduction\nHumankind invent pipes to control the everyday flow (water, air, blah! blah! blah!) in the work space. As a result Devs are makes same thing for the programming languages to make work flow smooth. I am not a developer I am a practitioner of statistics. At the beginning when I started to write codes in R, I personally not aware of this beautiful tool. I always fear about the so called piping the code.\nI started writing this blogs for my own help and practicing the piping. I use several reference for this blog but I also use stack overflow as a major reference. I list down the most viewed issues in the stack overflow about the piping for my future help.\n\n\n\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "--"
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#what-is-pipes",
+    "href": "posts/Plumbe-R/plumber_index.html#what-is-pipes",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "What is pipes?",
+    "text": "What is pipes?\nPipes in R were first introduce by Stefan Milton Bache in the package called magrittr (do you know René Magritte?). He develop this package keeping two things in mind:\n\ndecrease development time.\nimprove readability and maintainability of code.\n\n\n\n\nThe Treachery of Images (French: La Trahison des Images) by René Magritte\n\n\nThe magritrr offer ‘pipe’ -like operator, %>%. This operator is simply makes your function f(x) as x %>% f , x go to function f through the pipe rather than putting x directly into the f. This is look like I made my life more complicated but it is not in the perspective of data science. When we dealing with large data frame with enormous amount of attributes, there this pipes are really life saver.\nRecent times many package includes magritrr package because of huge demand. Major data science packages like tidyverse and dplyr has include pipe.\n\n\n\n\n\n\nTips:\n\n\n\nI am feeling lazy to type % , > and % individually. Keyboard shortcut: CTRL + shift + M .\n\n\nTo know more about the history of %>% operator see this History of the pipe operator in R."
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#basics",
+    "href": "posts/Plumbe-R/plumber_index.html#basics",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "Basics",
+    "text": "Basics\nLets have look at the following example:\nlibrary(tidyverse)\nmtcars %>% arrange(cyl) %>%  filter(mpg < 20)\nmtcars gives the data through the pipe (sometimes called forward pipe) to the function arrange where we sort the data according to the column cyl then pass the modified data to the function filter and extract only the rows which have mpg < 20.\n\n\n\n\n\n\nAppearence matters:\n\n\n\n#bad\nmtcars %>% arrange(cyl) %>%  filter(mpg < 20)\n\n#good\nmtcars %>% \n arrange(cyl) %>%  \n filter(mpg < 20)\n\n\nThis is how a pipe used in basic data manipulation."
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#simple-pipe-or-forward-pipe",
+    "href": "posts/Plumbe-R/plumber_index.html#simple-pipe-or-forward-pipe",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "Simple pipe or forward pipe, %>%",
+    "text": "Simple pipe or forward pipe, %>%\nThis is the most common type of pipe known by everyone who use tidyverse frequently. This is simply take my value into function.\n#normal guy\nprint(\"Ahoy world!\")\n\n#data scientist\n\"Ahoy world!\" %>% print()"
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#tee-pipe-t",
+    "href": "posts/Plumbe-R/plumber_index.html#tee-pipe-t",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "Tee pipe, %T>%",
+    "text": "Tee pipe, %T>%\nBoth x %>% f and x %T>% f run f(x) but the difference is that the first one returns the output of f(x) whereas the second one return x.\n> x <- c(1,2,3,4)\n> x %T>% sum() \n[1] 1 2 3 4\n\n%T>% is typically use with plot() or print() or other command that do not return anything.\nSuppose we want to use lm() multiple times for different sets of observations. We can use %T>% here.\nlibrary(magrittr)\n\nBOD %T>%\n  { lm(demand ~ Time, data = ., subset = 1:4) %>% print } %T>%\n  { lm(demand ~ Time, data = ., subset = 2:5) %>% print } %>%\n  { lm(demand ~ Time, data = ., subset = 3:6) %>% print }  \n\nfor more information please see this post on stackoverflow — What does %T>% function mean in R?."
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "AnnieNetwork",
     "section": "",
-    "text": "Begginer guide to use pipes in R\n\n\n\n\nR\n\n\nCoding\n\n\n\n\n\n\n\n\n\n\n\nSep 26, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\nNo matching items"
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n  \n\n\n\n\n\nHow to use Pipes in R?\n\n\n\n\nR\n\n\nCode\n\n\n\n\n\n\n\n\n\n\n\nSep 26, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -33,5 +61,19 @@
     "title": "Who am I…",
     "section": "Interest",
     "text": "Interest\nBroad portion of my mind occupied with only statistics. I mainly working with complex data structure and statistical inference on network data (synonymous with complex data). Besides statistics, I have interest in stock markets and R coding."
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#exposition-pipe",
+    "href": "posts/Plumbe-R/plumber_index.html#exposition-pipe",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "Exposition pipe, %$%",
+    "text": "Exposition pipe, %$%\nThis actually expose the names in ‘left hand expression’ to ‘right hand expression’, forward pipe operator does not allow that . See the example below\n> iris %>% cor(Sepal.Length, Sepal.Width)\nError in pmatch(use, c(\"all.obs\", \"complete.obs\", \"pairwise.complete.obs\",  : \n  object 'Sepal.Width' not found\n  \n> iris %$% cor(Sepal.Length, Sepal.Width)\n[1] -0.1175698"
+  },
+  {
+    "objectID": "posts/Plumbe-R/plumber_index.html#assignment-pipe",
+    "href": "posts/Plumbe-R/plumber_index.html#assignment-pipe",
+    "title": "Calling Plumbe-R, Huh!",
+    "section": "Assignment pipe, %<>%",
+    "text": "Assignment pipe, %<>%\nThis is just reassign the result of the pipe chain to the starting variable.\n#example 1\n> x <- c(1,2,3,4)\n> x %<>% sum()\n> x\n[1] 10\n#example 2\n> x <- c(1,2,3,4)\n> x %<>% sqrt() %>% sum()\n> x\n[1] 6.146264\nIn the example 2, x passed through the sqrt() and value of x become square root of original variable then we pass that value in sum().\n\n\n\n\n\n\nCaution\n\n\n\nAlthough this pipe make life easier, but experts do not recommend the use of this pipe.\n# Good\nx <- x %>% \n  abs() %>% \n  sort()\n  \n# Bad\nx %<>%\n  abs() %>% \n  sort()  \n\n\nTo know more about the appearenc and uses of pipe properly you can see the post of Hadley Wickham — R style guide."
   }
 ]
