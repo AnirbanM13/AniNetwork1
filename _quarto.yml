@@ -20,9 +20,9 @@ format:
 callout-appearance: simple
 callout-icon: false
 
-comments: true
-  giscus: true
-    repo: AnirbanM13/AniNetwork1 
+comments: 
+  giscus: 
+    repo: "AnirbanM13/AniNetwork1" 
  
 editor: visual
 
