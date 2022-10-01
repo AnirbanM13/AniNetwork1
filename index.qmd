@@ -2,12 +2,12 @@
 title: "AnnieNetwork"
 listing:
   contents: posts
-  sort: "date desc"
+  sort: date desc
   type: default
-  comments: false
   categories: true
   sort-ui: true
   filter-ui: false
 page-layout: full
+comments: false
 title-block-banner: true
 ---

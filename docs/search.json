@@ -49,6 +49,13 @@
     "text": "Assignment pipe, %<>%\nThis is just reassign the result of the pipe chain to the starting variable.\n#example 1\n> x <- c(1,2,3,4)\n> x %<>% sum()\n> x\n[1] 10\n#example 2\n> x <- c(1,2,3,4)\n> x %<>% sqrt() %>% sum()\n> x\n[1] 6.146264\nIn the example 2, x passed through the sqrt() and value of x become square root of original variable then we pass that value in sum().\n\n\n\n\n\n\nCaution\n\n\n\nAlthough this pipe make life easier, but experts do not recommend the use of this pipe.\n# Good\nx <- x %>% \n  abs() %>% \n  sort()\n  \n# Bad\nx %<>%\n  abs() %>% \n  sort()  \n\n\nTo know more about the appearenc and uses of pipe properly you can see the post of Hadley Wickham — R style guide."
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "AnnieNetwork",
+    "section": "",
+    "text": "Order By\n       Default\n         \n          Title\n        \n         \n          Date - Oldest\n        \n         \n          Date - Newest\n        \n         \n          Author\n        \n     \n  \n\n\n\n\n  \n\n\n\n\n\nHow to use Pipes in R?\n\n\n\n\nR\n\n\nCode\n\n\n\n\n\n\n\n\n\n\n\nSep 26, 2022\n\n\nAnirban Mandal\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "about.html",
     "href": "about.html",
     "title": "Who am I…",
