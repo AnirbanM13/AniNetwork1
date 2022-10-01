@@ -8,11 +8,9 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/AnirbanM13
+        href: https://github.com/
       - icon: twitter
-        href: https://twitter.com/anirban___13
-      - text: Blog
-      - href: https://anirbanm13.github.io/AniNetwork1/
+        href: https://twitter.com
   
 format:
   html:

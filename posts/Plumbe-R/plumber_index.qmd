@@ -149,7 +149,7 @@ In the example 2, `x` passed through the `sqrt()` and value of `x` become square
 
 Although this pipe make life easier, but experts do not recommend the use of this pipe.
 
-``` R
+``` r
 # Good
 x <- x %>% 
   abs() %>% 
